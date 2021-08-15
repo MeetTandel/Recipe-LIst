@@ -14,8 +14,8 @@ function App() {
   
   // load recipes
   useEffect(() => {
-    const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY) || sampleRecipes
-    if (recipeJSON !== null) setRecipes(JSON.parse(recipeJSON))
+    const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+    recipeJSON !== null ? setRecipes(JSON.parse(recipeJSON)) : setRecipes(sampleRecipes)
   }, [])
 
   // store recipes
